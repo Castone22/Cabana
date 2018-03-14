@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { BookBinderService } from "./shared/services/book-binder.service";
+import { BookData } from './shared/models';
+import { RestService } from "./shared/services/rest.service";
 
 @Component({
   selector: 'app-root',
@@ -7,12 +10,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  books;
+  title = 'Cabana Shelf';
+  books: BookData[] = null;
 
-  constructor(private http: HttpClient) {
-    http.get('http://localhost:3000/books.json')
-      .subscribe(response => this.books = response);
+  constructor(private bookBinderService: BookBinderService, restService: RestService) {
+    restService.getBooks().subscribe((books: BookData[]) => {
+      this.bookBinderService.addBooks(...books);
+      this.books = bookBinderService.getBooks();
+    })
   }
+
 
 }
