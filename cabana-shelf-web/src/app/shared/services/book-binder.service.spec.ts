@@ -9,12 +9,14 @@ describe('BookBinderService', () => {
       title: 'Hello World',
       description: 'Computer says hello.',
       read: false,
-      pagesRead: 22
+      pagesRead: 22,
+      googleId: '9x44'
     },
     {
       title: 'Ruby Rox: A shiny language',
       read: true,
       pagesRead: 256,
+      googleId: '955xx4',
       notes: ['Ruby is a dynamic language', 'Modules are like a building block for a class.']
     }
   ];
