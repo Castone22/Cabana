@@ -1,2 +1,2 @@
-export * from 'book-data.model'
+export { BookData } from './book-data.model'
 

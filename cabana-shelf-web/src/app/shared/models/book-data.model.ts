@@ -4,4 +4,5 @@ export interface BookData {
   read: boolean;
   pagesRead: number;
   notes?: Array<string>;
+  googleId?: string;
 }
