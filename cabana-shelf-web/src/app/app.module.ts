@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { HttpModule } from "@angular/http";
 import {RestService} from "./shared/services/rest.service";
 import {BookBinderService} from "./shared/services/book-binder.service";
+import { ShelfComponent } from './shelf/shelf.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShelfComponent
   ],
   imports: [
     BrowserModule,

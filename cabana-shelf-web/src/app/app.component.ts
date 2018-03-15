@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { BookBinderService } from "./shared/services/book-binder.service";
 import { BookData } from './shared/models';
 import { RestService } from "./shared/services/rest.service";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,10 @@ import { RestService } from "./shared/services/rest.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Cabana Shelf';
-  books: BookData[] = null;
+  endpoints = environment.endpoints;
 
-  constructor(private bookBinderService: BookBinderService, restService: RestService) {
-    restService.getBooks().subscribe((books: BookData[]) => {
-      this.bookBinderService.addBooks(...books);
-      this.books = bookBinderService.getBooks();
-    })
+  constructor(){
+
   }
 
 
