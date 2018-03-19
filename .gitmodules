@@ -1,0 +1,6 @@
+[submodule "cabana-shelf-web"]
+	path = cabana-shelf-web
+	url = https://github.com/Castone22/cabana-shelf-web
+[submodule "cabana-shelf-api"]
+	path = cabana-shelf-api
+	url = https://github.com/Castone22/cabana-shelf-api
