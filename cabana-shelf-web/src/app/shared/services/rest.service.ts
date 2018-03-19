@@ -22,6 +22,10 @@ export class RestService {
         }});
   }
 
+  removeBook(book: BookData) {
+    return this.http.delete(`${environment.endpoints.booksApi}/books/${book.id}`)
+  }
+
   private logError(error: any){
     console.error(error)
     return Observable.throw(error);

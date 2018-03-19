@@ -6,19 +6,21 @@ import { BookBinderService } from './book-binder.service';
 describe('BookBinderService', () => {
   const bookFixtures: Array<BookData> = [
     {
+      id: 1,
       title: 'Hello World',
       description: 'Computer says hello.',
       read: false,
-      pagesRead: 22,
-      googleId: '9x44'
-    },
+      pages_read: 22,
+      google_id: '9x44'
+    } as BookData,
     {
+      id: 2,
       title: 'Ruby Rox: A shiny language',
       read: true,
-      pagesRead: 256,
-      googleId: '955xx4',
+      pages_read: 256,
+      google_id: '955xx4',
       notes: ['Ruby is a dynamic language', 'Modules are like a building block for a class.']
-    }
+    } as BookData
   ];
   let service: BookBinderService;
   beforeEach(() => {
@@ -43,6 +45,11 @@ describe('BookBinderService', () => {
   it('add books can take any number of arguments and books are not unique',()=>{
     service.addBooks(bookFixtures[0], bookFixtures[1], bookFixtures[1]);
     expect(service.getBooks()).toEqual([bookFixtures[0], bookFixtures[1], bookFixtures[1]]);
+  });
+  it('will remove a book when removeBooks is called', ()=>{
+    service.addBooks(bookFixtures[0], bookFixtures[1]);
+    service.removeBook(bookFixtures[0]);
+    expect(service.getBooks()).toEqual([bookFixtures[1]]);
   });
 
 });

@@ -77,7 +77,7 @@ describe('Rest Service', () => {
       body: { error: 'Something just broke. I\'m terribly sorry.' },
       status: 500,
     });
-    spyOn(console, 'error')
+    spyOn(console, 'error');
 
     service.getBooks().subscribe(null, () => {
     });

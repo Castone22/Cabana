@@ -15,4 +15,11 @@ export class BookBinderService {
       this.addBook(book)
     })
   }
+
+  removeBook(book: BookData){
+    const index = this.books.indexOf(book);
+    if(index !== -1) {
+      this.books.splice(index, 1)
+    }
+  }
 }
