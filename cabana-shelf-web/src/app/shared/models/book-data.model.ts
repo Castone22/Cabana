@@ -1,8 +1,9 @@
 export interface BookData {
   title: string;
+  id: number;
   description?: string;
   read: boolean;
-  pagesRead: number;
+  pages_read: number;
   notes?: Array<string>;
-  googleId?: string;
+  google_id?: string;
 }
